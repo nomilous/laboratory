@@ -25,3 +25,19 @@ require('nez').realize 'JisonHowTo', (JisonHowTo, test, context, jison, should) 
             # 
 
             test done
+
+        has 'a parser', (that) -> 
+
+            that 'requires at least one grammar rule', (done) -> 
+
+                try
+
+                    parser = new jison.Parser {}
+
+                catch error
+
+                    error.should.match /Grammar error: must have at least one rule/
+                    test done
+
+            
+
