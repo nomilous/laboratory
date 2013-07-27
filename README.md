@@ -1,4 +1,10 @@
 laboratory
 ==========
 
-learning and experimentation ( javascript / coffeescript / note / etc )
+learning and experimentation
+
+* javascript
+* coffeescript
+* nodejs
+* etc
+

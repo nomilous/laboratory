@@ -1,0 +1,11 @@
+#!/usr/bin/env coffee
+
+require('nez').objective 'laboratory', 
+
+    description: """
+
+        WEAR SHOES... 
+
+        There may be broken test-tubes about!
+
+    """, -> 

@@ -1,0 +1,9 @@
+{
+  "name": "laboratory",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "nez": "0.0.7",
+    "should": "~1.2.2"
+  }
+}
