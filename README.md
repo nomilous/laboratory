@@ -1,8 +1,7 @@
 laboratory
 ==========
 
-learning and experimentation
-----------------------------
+### learning and experimentation
 
 * javascript
 * coffeescript

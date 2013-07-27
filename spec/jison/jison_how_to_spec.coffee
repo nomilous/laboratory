@@ -39,5 +39,27 @@ require('nez').realize 'JisonHowTo', (JisonHowTo, test, context, jison, should) 
                     error.should.match /Grammar error: must have at least one rule/
                     test done
 
-            
+    context 'parser', (can) -> 
+
+        parser = new jison.Parser 
+
+            lex:
+                rules: [
+                    ["\\s+",        "/* skip whitespace */"]
+                    ["[a-f0-9]+",   "return 'HEX';"]
+                ]
+
+            bnf: 
+                hex_strings: ["hex_strings HEX", "HEX"]
+
+        can 'idetify hex', (done) -> 
+
+            parser.parse("adcdef34bc e82a").should.equal true
+            test done
+
+        can 'do what i need?', (done) ->  
+
+            throw 'hard to tell'
+            test done
+
 
