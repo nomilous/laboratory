@@ -1,5 +1,6 @@
 should = require 'should'
 q = require 'q'
+When = require 'when'
 
 describe 'q', -> 
 
@@ -52,6 +53,34 @@ describe 'q', ->
 
             promised().then -> 
                
-               2.should.equal 2
+               2.should.equal 1
                done()
+
+
+
+
+    context 'same with when', -> 
+
+        be = (fn) -> (done) -> 
+            
+            fn( done ).then (->), done
+
+        promised = ->
+
+            action = When.defer()
+            action.resolve()
+            action.promise
+
+        it 'should something', be (done) -> 
+
+
+            promised().then -> 
+               
+               2.should.equal 1
+               done()
+
+
+        #
+        # 'okgood', ->  see ipso.facto
+        #
 

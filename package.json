@@ -8,8 +8,8 @@
     "q": "~0.9.7",
     "hound": "~1.0.4",
     "coffee-script": "~1.6.3",
-    "mocha": "~1.13.0"
+    "mocha": "~1.13.0",
+    "when": "~2.5.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
