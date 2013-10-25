@@ -4,10 +4,12 @@
   "private": true,
   "devDependencies": {
     "nez": "0.0.7",
-    "should": "~1.2.2"
+    "should": "~2.0.2",
+    "q": "~0.9.7",
+    "hound": "~1.0.4",
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.13.0"
   },
   "dependencies": {
-    "jison": "~0.4.6",
-    "coffee-script": "~1.6.3"
   }
 }
