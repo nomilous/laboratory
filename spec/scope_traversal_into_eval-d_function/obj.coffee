@@ -4,6 +4,9 @@ module.exports.obj =
 
     getVar: -> scopeVar
 
+    $getVar: -> scopeVar
+    $$getVar: -> scopeVar
+
 
 module.exports.factory = -> 
 
