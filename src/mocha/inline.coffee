@@ -33,12 +33,12 @@ module.exports = (specFile) ->
             
             ###
 
-            runner.on 'start', -> console.log 'start', arguments
+            # runner.on 'start', -> console.log 'start', arguments
             runner.on 'suite', -> console.log 'suite', arguments
             runner.on 'test',  -> console.log 'test',  arguments
-            runner.on 'hook',  -> console.log 'hook',  arguments
-            runner.on 'pass',  -> console.log 'pass',  arguments
-            runner.on 'fail',  -> console.log 'fail',  arguments
+            # runner.on 'hook',  -> console.log 'hook',  arguments
+            # runner.on 'pass',  -> console.log 'pass',  arguments
+            # runner.on 'fail',  -> console.log 'fail',  arguments
 
             #
             # nice!
