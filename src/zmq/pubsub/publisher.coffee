@@ -7,27 +7,53 @@ zmq  = require 'zmq'
                     #
 
 sock = zmq.socket 'push'
+seq  = 0 
 
 sock.bind 'tcp://127.0.0.1:3000', ->
 
     console.log sending: 1
 
-    seq = 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
-    setInterval (-> sock.send seq++), 0
+    #
+    # sent messages are queued while no subscribers are present
+    #
 
-    setTimeout (-> 
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
+    # setInterval (-> sock.send seq++), 0
 
-        sock.close()
-        console.log closed: 1
+    # setTimeout (-> 
 
-    ), 10000
+    #     sock.close()
+    #     console.log closed: 1
+
+    # ), 10000
+
+    
+
+    prevMem = undefined
+
+    setInterval (->
+
+
+        mem = process.memoryUsage()
+
+
+        if prevMem? then console.log delta: 
+            rss: mem.rss - prevMem.rss
+            heap: 
+                tot: mem.heapTotal - prevMem.heapTotal
+                used: mem.heapUsed - prevMem.heapUsed
+
+
+
+        prevMem = mem
+
+    ), 1000
 
