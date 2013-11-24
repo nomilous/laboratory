@@ -3,16 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "nez": "0.0.7",
     "should": "~2.0.2",
     "q": "~0.9.7",
     "hound": "~1.0.4",
     "coffee-script": "~1.6.3",
     "mocha": "~1.13.0",
     "when": "~2.5.1",
-    "engine.io-client": "~0.7.10",
-    "does": "0.0.1",
-    "ipso": "0.0.9"
+    "ipso": "0.0.14",
+    "zmq": "~2.5.1"
   },
   "dependencies": {}
 }
