@@ -1,21 +1,33 @@
 zmq  = require 'zmq'
+
+
+                    #
+                    # push - spreads messages evenly between all 
+                    #        pulling subscribers
+                    #
+
 sock = zmq.socket 'push'
 
-sock.bindSync 'tcp://127.0.0.1:3000'
+sock.bind 'tcp://127.0.0.1:3000', ->
 
-seq = 0
+    console.log sending: 1
 
-# sock.send seq++ while true 
+    seq = 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
+    setInterval (-> sock.send seq++), 0
 
+    setTimeout (-> 
 
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
-setInterval (-> sock.send seq++), 0
+        sock.close()
+        console.log closed: 1
+
+    ), 10000
 
